@@ -27,7 +27,7 @@ void PrintArray(int[] array, string sep = " ")
     }
 }
 // =======================
-int[] GetSumNegPosEleme(int[] arr)
+int[] GetSumNegPosElem(int[] arr)
 {
     int sumPositive = 0;
     int sumNegative = 0;
@@ -39,6 +39,26 @@ int[] GetSumNegPosEleme(int[] arr)
     return new int[] {sumNegative, sumPositive};
 }
 
+// =======================
+int GetSumNegElem(int[] arr)
+{
+    int sum = 0;
+    for (int i = 0; i < arr.Length; i ++)
+    {
+        if (arr[i] < 0) sum += arr[i];
+    }
+    return sum;
+}
+// =======================
+int GetSumPosElem(int[] arr)
+{
+    int sum = 0;
+    for (int i = 0; i < arr.Length; i ++)
+    {
+        if (arr[i] > 0) sum += arr[i];
+    }
+    return sum;
+}
 
 Console.Write("Введите размерность массива :");
 int arrSize = Convert.ToInt32(Console.ReadLine());
@@ -52,8 +72,14 @@ int arrMaxNum = Convert.ToInt32(Console.ReadLine());
 int[] arr = CreateRndArray(arrSize, arrMinNum, arrMaxNum);
 PrintArray(arr, ",");
 
-int[] sumNegPosEleme = GetSumNegPosEleme(arr);
+int[] sumNegPosElem = GetSumNegPosElem(arr);
 Console.WriteLine();
-Console.WriteLine($"Сумма отрицательных элементов массива: {sumNegPosEleme[0]}");
-Console.WriteLine($"Сумма положительных элементов массива: {sumNegPosEleme[1]}");
+Console.WriteLine($"Сумма отрицательных элементов массива: {sumNegPosElem[0]}");
+Console.WriteLine($"Сумма положительных элементов массива: {sumNegPosElem[1]}");
 
+Console.WriteLine();
+int sum = GetSumNegElem(arr);
+Console.WriteLine($"Сумма отрицательных элементов массива: {sum}");
+
+sum = GetSumPosElem(arr);
+Console.WriteLine($"Сумма положительных элементов массива: {sum}");
