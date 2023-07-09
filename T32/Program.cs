@@ -23,13 +23,13 @@ void PrintArray(int[] array, string sep = " ")
         else Console.Write($"{array[i]}]");
     }
 }
-int[] NegArray(int[] array)
+void NegArray(int[] array)
 {
     for (int i = 0; i < array.Length; i ++)
     {
-        array[i] = array[i] * -1;
+        array[i] *= -1;
     }
-    return array;
+
 }
 
 // =======================
@@ -46,5 +46,5 @@ int[] arr = CreateRndArray(arrSize, arrMinNum, arrMaxNum);
 PrintArray(arr, ",");
 
 Console.WriteLine();
-int[]negarr = NegArray(arr);
-PrintArray(negarr, ",");
+NegArray(arr);
+PrintArray(arr, ",");
