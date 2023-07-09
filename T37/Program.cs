@@ -25,9 +25,13 @@ void PrintArray(int[] array, string sep = " ")
     }
 }
 // =======================
-int[] NewArray(int[] array, int size)
+int[] NewArray(int[] array)
 {
-    
+    int size = 0;
+    if (array.Length % 2 == 0) size = array.Length / 2;
+    else size = array.Length / 2 + 1;
+
+
     int[] result = new int[size];
 
     for (int i = 0; i < result.Length; i ++)
@@ -54,10 +58,6 @@ int arrMaxNum = Convert.ToInt32(Console.ReadLine());
 int[] arr = CreateRndArray(arrSize, arrMinNum, arrMaxNum);
 PrintArray(arr, ",");
 
-int newArrSize = 0;
-if (arrSize % 2 == 0) newArrSize = arrSize / 2;
-else newArrSize = arrSize / 2 + 1;
-
 Console.WriteLine();
-int[] newArr = NewArray(arr, newArrSize);
+int[] newArr = NewArray(arr);
 PrintArray(newArr, ",");
