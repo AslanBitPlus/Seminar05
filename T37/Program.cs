@@ -58,7 +58,6 @@ int newArrSize = 0;
 if (arrSize % 2 == 0) newArrSize = arrSize / 2;
 else newArrSize = arrSize / 2 + 1;
 
-// Console.Write($"Размерность нового массива :{newArrSize}");
 Console.WriteLine();
 int[] newArr = NewArray(arr, newArrSize);
 PrintArray(newArr, ",");
